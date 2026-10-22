@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Passo a Passo — Organização de rotina</title>
+  <meta name="description" content="Ferramenta de apoio à organização de tarefas e rotina. Sem pressa, um passo de cada vez.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cabeçalho verde com o nome do projeto -->
+  <header class="topo">
+    <h1>🌱 Passo a Passo</h1>
+    <p>Sem pressa, um passo de cada vez.</p>
+  </header>
+
+  <!-- Menu em abas -->
+  <nav class="abas" role="tablist">
+    <button class="aba ativa" data-aba="tarefas" role="tab">✅ Tarefas</button>
+    <button class="aba" data-aba="rotina" role="tab">🗓️ Rotina</button>
+    <button class="aba" data-aba="foco" role="tab">⏱️ Foco</button>
+    <button class="aba" data-aba="sobre" role="tab">💬 Sobre</button>
+  </nav>
+
+  <main>
+    <!-- ABA: TAREFAS -->
+    <section id="tarefas" class="painel ativo">
+      <h2>Suas tarefas</h2>
+      <form id="form-tarefa" class="linha">
+        <input id="nova-tarefa" type="text" placeholder="O que você quer fazer?" maxlength="120" required>
+        <button type="submit" class="btn">Adicionar</button>
+      </form>
+      <p id="vazio-tarefas" class="dica">Nenhuma tarefa ainda. Que tal começar com algo pequeno?</p>
+      <ul id="lista-tarefas" class="lista"></ul>
+      <button id="limpar-tudo" class="btn btn-perigo">🗑️ Limpar tudo</button>
+    </section>
+
+    <!-- ABA: ROTINA -->
+    <section id="rotina" class="painel">
+      <h2>Sua rotina do dia</h2>
+      <p class="dica">Escolha o período de cada tarefa na aba Tarefas (botão 🗓️). Tudo bem deixar blocos vazios.</p>
+      <div class="blocos">
+        <div class="bloco"><h3>☀️ Manhã</h3><ul id="bloco-manha"></ul></div>
+        <div class="bloco"><h3>🌤️ Tarde</h3><ul id="bloco-tarde"></ul></div>
+        <div class="bloco"><h3>🌙 Noite</h3><ul id="bloco-noite"></ul></div>
+      </div>
+    </section>
+
+    <!-- ABA: FOCO -->
+    <section id="foco" class="painel">
+      <h2>Timer de foco</h2>
+      <p class="dica">Escolha um tempo que pareça possível agora.</p>
+      <div class="linha opcoes">
+        <button class="btn btn-sec tempo" data-min="10">10 min</button>
+        <button class="btn btn-sec tempo" data-min="15">15 min</button>
+        <button class="btn btn-sec tempo ativo" data-min="25">25 min</button>
+      </div>
+      <div id="relogio" class="relogio" aria-live="polite">25:00</div>
+      <div class="linha opcoes">
+        <button id="btn-iniciar" class="btn">▶ Iniciar</button>
+        <button id="btn-pausar" class="btn btn-sec">⏸ Pausar</button>
+        <button id="btn-reiniciar" class="btn btn-sec">↺ Reiniciar</button>
+      </div>
+      <button id="btn-som" class="btn btn-sec">🔔 Som ligado</button>
+      <p id="msg-foco" class="msg" hidden></p>
+    </section>
+
+    <!-- ABA: SOBRE -->
+    <section id="sobre" class="painel">
+      <h2>Sobre o projeto</h2>
+      <p>Muita gente sente dificuldade em planejar o dia, dividir tarefas grandes em partes menores e manter uma rotina. Isso pode acontecer com qualquer pessoa, inclusive com quem tem TDAH.</p>
+      <p>O Passo a Passo é uma ferramenta simples para apoiar essa organização: você anota tarefas, quebra em passos pequenos, distribui pelo dia e usa um timer para focar por alguns minutos.</p>
+      <p>Seus dados ficam salvos apenas neste navegador. Não há cadastro nem login.</p>
+      <p class="aviso">Esta é uma ferramenta de apoio à organização pessoal e não substitui acompanhamento de profissionais de saúde.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>Projeto desenvolvido para o Hackathon UNAMA.</p>
+    <p>Esta é uma ferramenta de apoio à organização pessoal e não substitui acompanhamento de profissionais de saúde.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
